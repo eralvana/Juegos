@@ -18,7 +18,7 @@ function juego01() {
     var bloqueEspacio = 3;
     var bloqueMargenSuperior = 10;
     var bloqueMargenInferior = 10;
-    var techoBloques = 30;
+    var techoBloques = 5;
     var paredBloques = 10;
     var puntos = 0;
     var oportunidades = 3;
@@ -106,7 +106,7 @@ function juego01() {
     function puntuacion() {
         contexto.font = "bold 16px verdana";
         contexto.fillStyle = "#000000";
-        contexto.fillText("Puntuación: "+puntos, canvas.width-200, 20);
+        contexto.fillText("Puntuación: "+ puntos, canvas.width-200, 20);
     }
     function oportunidad() {
         contexto.font = "bold 16px verdana";
@@ -118,8 +118,6 @@ function juego01() {
         bloque();
     	pelota();
     	tabla();
-        puntuacion();
-        oportunidad();
         detectar();
     	if(x + dx > canvas.width-radio || x + dx < radio) {
     		dx = -dx;
@@ -155,6 +153,13 @@ function juego01() {
     	x += dx;
     	y += dy;
         requestAnimationFrame(pintar);
+        var rotos = document.getElementById("rotos")
+        rotos.innerHTML = puntos;
+        var restan = columnasBloques*renglonesBloques - puntos
+        var faltantes = document.getElementById("faltan")
+        faltantes.innerHTML = restan;
+        var vida = document.getElementById("vidas")
+        vida.innerHTML = oportunidades
     }
     pintar();
 }

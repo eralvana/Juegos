@@ -20,9 +20,24 @@
 			</ul>
 		</nav>
 		<section class="seccion">
-			<canvas class="canvas" id="canvasJuego01" width="480" height="320">
-				<span id="juego01"></span>
-			</canvas>
+			<div class="wrapper">
+				<div class="canvas">
+					<canvas id="canvasJuego01" width="480" height="320">
+						<span id="juego01"></span>
+					</canvas>
+				</div>
+				<div class="info">
+					<p>
+						Puntuación: <span id="rotos"></span>
+					</p>
+					<p>
+						Bloques restantes: <span id="faltan"></span>
+					</p>
+					<p>
+						Oportunidades: <span id="vidas"></span>
+					</p>
+				</div>
+			</div>
 		</section>
 		<footer class="pie">
 			Derechos Reservados &copy; 2018.
