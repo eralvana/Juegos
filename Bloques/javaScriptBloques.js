@@ -22,8 +22,10 @@ var paredBloques = 10;
 var puntos = 0;
 var oportunidades = 3;
 var bloques = [];
+var v;
 
 function juego01() {
+  empezarDeCero();
   for(c=0; c<columnasBloques; c++) {
       bloques[c] = [];
       for(r=0; r<renglonesBloques; r++) {
@@ -34,6 +36,33 @@ function juego01() {
   document.addEventListener("keyup", nooprimir, false);
   document.addEventListener("mousemove", moverRaton, false);
   pintar();
+}
+function empezarDeCero() {
+  canvas = document.getElementById("canvasJuego01");
+  contexto = canvas.getContext("2d");
+  radio = 10
+  x = canvas.width/2;
+  y = canvas.height-30;
+  dx = 2;
+  dy = -2;
+  tablaAlto = 10;
+  tablaAncho = 75;
+  tablaPosicion = (canvas.width - tablaAncho)/2;
+  pucharDerecho = false;
+  pucharIzquierdo = false;
+  renglonesBloques = 5;
+  columnasBloques = 8;
+  bloqueAncho = 55;
+  bloqueAlto = 15;
+  bloqueEspacio = 3;
+  bloqueMargenSuperior = 10;
+  bloqueMargenInferior = 10;
+  techoBloques = 5;
+  paredBloques = 10;
+  puntos = 0;
+  oportunidades = 3;
+  bloques = [];
+  v = document.getElementById("velocidad").value;
 }
 function oprimir(e) {
   if(e.keyCode == 39) {
@@ -162,8 +191,8 @@ function pintar() {
     tablaPosicion -= 8;
   }
 
-  x += dx;
-  y += dy;
+  x += dx * (1 + v / 10);
+  y += dy * (1 + v / 10);
     requestAnimationFrame(pintar);
     var rotos = document.getElementById("rotos")
     rotos.innerHTML = puntos;
