@@ -7,7 +7,7 @@
 		<title>Bloques</title>
 		<link rel="icon" type="image/png" href="../archivos/ico.png"/>
 		<link rel="stylesheet" href="../styleJuegos.css">
-		<script src="javaScriptBloques.js"></script>
+		<script src="Bloques.js"></script>
 	</head>
 	<body>
 		<div class="agrupar">
@@ -16,10 +16,47 @@
 		</header>
 		<nav class="menu">
 			<ul>
-				<a href="../juegos.html"><li>Atrás</li></a>
+				<a href="../juegos.html"><li>Menú Juegos</li></a>
 			</ul>
 		</nav>
 		<section class="seccion">
+			<div>
+				<h2>Configuración de juego</h2>
+				<p>
+					Tamaño de la pelota :
+					<select id="tamPelota">
+						<option value="5">Chico</option>
+						<option value="10">Mediano</option>
+						<option value="15">Grande</option>
+					</select>
+				</p>
+				<p>
+					Tamaño de la tabla :
+					<select id="tamTabla">
+						<option value="50">Chica</option>
+						<option value="75">Mediana</option>
+						<option value="100">Grande</option>
+					</select>
+				</p>
+				<p>
+					Velocidad :
+					<select id="velocidad" >
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</p>
+			</div>
+			<div>
+				<input type="button" value="Comenzar" onclick="juego01()">
+			</div>
 			<div class="wrapper">
 				<div class="canvas">
 					<canvas id="canvasJuego01" width="480" height="320">
@@ -27,9 +64,6 @@
 					</canvas>
 				</div>
 				<div class="info">
-					<p>
-						<input type="button" name="comenzar" onclick="juego01()" value="Comenzar">
-					</p>
 					<p>
 						Puntuación: <span id="rotos"></span>
 					</p>
