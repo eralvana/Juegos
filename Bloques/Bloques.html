@@ -20,25 +20,25 @@
 			</ul>
 		</nav>
 		<section class="seccion">
-			<div>
-				<h2>Configuración de juego</h2>
-				<p>
+			<h2>Configuración de juego</h2>
+			<div class="configuracion">
+				<div class="c1r1">
 					Tamaño de la pelota :
 					<select id="tamPelota">
 						<option value="5">Chico</option>
 						<option value="10">Mediano</option>
 						<option value="15">Grande</option>
 					</select>
-				</p>
-				<p>
+				</div>
+				<div class="c2r1">
 					Tamaño de la tabla :
 					<select id="tamTabla">
 						<option value="50">Chica</option>
 						<option value="75">Mediana</option>
 						<option value="100">Grande</option>
 					</select>
-				</p>
-				<p>
+				</div>
+				<div class="c3r1">
 					Velocidad :
 					<select id="velocidad" >
 						<option>1</option>
@@ -52,16 +52,14 @@
 						<option>9</option>
 						<option>10</option>
 					</select>
-				</p>
+				</div>
 			</div>
-			<div>
+			<div class="c2r2">
 				<input type="button" value="Comenzar" onclick="juego01()">
 			</div>
 			<div class="wrapper">
 				<div class="canvas">
-					<canvas id="canvasJuego01" width="480" height="320">
-						<span id="juego01"></span>
-					</canvas>
+					<canvas id="canvasJuego01" width="480" height="320"></canvas>
 				</div>
 				<div class="info">
 					<p>
