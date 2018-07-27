@@ -17,8 +17,11 @@ function genera_tabla() {
   contenedor.setAttribute("class","wrapper");
   contenedor.setAttribute("id","tabla");
   document.getElementById("aquivalochido").appendChild(contenedor);
+  
 
   
+
+
   for(i=0;i< ren ;i++){
     for(j=0;j<col;j++){
       var midiv = document.createElement("div");
