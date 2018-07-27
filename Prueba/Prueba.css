@@ -110,8 +110,8 @@ a:hover{
 .wrapper {
 	display: grid;
 	grid-gap: 5px;
-	grid-template-columns: repeat(10,75px);
-	grid-template-rows: repeat(5,75px);
+	/*grid-template-columns: repeat(10,75px);
+	grid-template-rows: repeat(10,75px);*/
 	background-color: #BBBBBB;
 }
 .c0 {
@@ -136,4 +136,26 @@ a:hover{
 }
 .c4 {
 	background-color: #00FFFF;
+}
+.configuracion {
+	display: grid;
+	grid-template-columns: 3;
+	grid-template-rows: 1;
+	grid-gap: 10px;
+	margin: 20px auto;
+}
+.c1r1 {
+	grid-column: 1;
+	grid-row: 1;
+	text-align: left;
+}
+.c2r1 {
+	grid-column: 2;
+	grid-row: 1;
+	text-align: left;
+}
+.c3r1 {
+	grid-column: 3;
+	grid-row: 1;
+	text-align: left;
 }
