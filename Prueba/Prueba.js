@@ -7,3 +7,6 @@ function cambiaColor(id) {
   if (i == 5){i = 0}
   document.getElementById(id).setAttribute("class", color[i]);
 }
+function comprobar(){
+
+}
