@@ -45,13 +45,40 @@ function cambiaColor(id) {
   document.getElementById(id).setAttribute("class", color[i]);
 }
 function comprobar(){
-  alert("Prueba de que jala dos trenzas el botón.")
-  /*for(i=0;i< ren ;i++){
+  ren = document.getElementById("renglones").value;
+  col = document.getElementById("columnas").value;
+  var casblanco = 0;
+  for(i=0;i< ren ;i++){
     for(j=0;j<col;j++){
       var cas = document.getElementById("c"+i+j).getAttribute("class");
-      while(cas !== "c0"){};
-      alert("La Casilla "+  i + "," + j + "  está en blanco")
-
+      if (cas == "c0"){
+        casblanco ++;
       }
-    }*/
+    }
+  }
+  if(casblanco == 0){
+    for(i=0;i< ren ;i++){
+      for(j=0;j<col;j++){
+        var cas = document.getElementById("c"+i+j).getAttribute("class");
+        if(j<col-1){
+          var casder = document.getElementById("c"+i+(j+1)).getAttribute("class");
+          if (cas == casder){
+            alert("La Casilla "+i+","+j+" y la Casilla " + i +","+(j+1)+" tienen el mismo color.");
+            return;
+          }
+        }
+        if(i<ren-1){
+           var casaba = document.getElementById("c"+(i+1)+j).getAttribute("class");
+           if(cas == casaba){
+            alert("La Casilla "+i+","+j+" y la Casilla " + (i+1) +","+j+" tienen el mismo color.");
+            return;
+          }
+        }
+      }
+    }
+    alert("El mapa está bien coloreado.");
+  }
+   else {
+    alert("Tienes " + casblanco + " casillas en blanco.");
+  }
 }
